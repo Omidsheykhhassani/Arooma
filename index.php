@@ -1,3 +1,5 @@
 <?php get_header(); ?>
-  <h1>Let the show begin</h1>
+  <main>
+    
+  </main>
 <?php get_footer(); ?>
