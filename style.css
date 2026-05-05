@@ -6,40 +6,133 @@
 
 @import "tailwindcss";
 
-@theme {
-  --color-primary-100: #E5D3B3;
-  --color-primary-300: #A5676E;
-  --color-primary-500: #7A1F2A;
-  --color-primary-700: #53151D;
-  --color-primary-900: #2C0B0F;
+@font-face {
+  font-family: "Lotus";
+  src: url("/wp-content/themes/Arooma/assets/fonts/Lotus.woff") format("woff");
+  font-weight: normal;
+}
 
-  --color-accent-100: #CFAEB2;
-  --color-accent-300: #CDAD70;
-  --color-accent-500: #B6862C;
-  --color-accent-700: #7C5B1E;
+@font-face {
+  font-family: "Lotus";
+  src: url("/wp-content/themes/Arooma/assets/fonts/Lotus-bold.woff")
+    format("woff");
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "Nastaligh";
+  src: url("/wp-content/themes/Arooma/assets/fonts/IranNastaliq.woff")
+    format("woff");
+}
+
+@theme {
+  --color-primary-100: #e5d3b3;
+  --color-primary-300: #a5676e;
+  --color-primary-500: #7a1f2a;
+  --color-primary-700: #53151d;
+  --color-primary-900: #2c0b0f;
+
+  --color-accent-100: #cfaeb2;
+  --color-accent-300: #cdad70;
+  --color-accent-500: #b6862c;
+  --color-accent-700: #7c5b1e;
   --color-accent-900: #423010;
 
-  --color-blacks-100: #AEADAB;
+  --color-blacks-100: #aeadab;
   --color-blacks-300: #676361;
-  --color-blacks-500: #1F1A17;
+  --color-blacks-500: #1f1a17;
   --color-blacks-700: #151210;
-  --color-blacks-900: #0B0908;
+  --color-blacks-900: #0b0908;
 
-  --color-whites-100: #FBF9F5;
-  --color-whites-300: #F8F4EB;
-  --color-whites-500: #F5EFE2;
-  --color-whites-700: #A7A39A;
+  --color-whites-100: #fbf9f5;
+  --color-whites-300: #f8f4eb;
+  --color-whites-500: #f5efe2;
+  --color-whites-700: #a7a39a;
   --color-whites-900: #585651;
 
-  --color-warning-100: #EBD4AD;
-  --color-warning-300: #DAAD63;
-  --color-warning-500: #C8871A;
-  --color-warning-700: #885C12;
+  --color-warning-100: #ebd4ad;
+  --color-warning-300: #daad63;
+  --color-warning-500: #c8871a;
+  --color-warning-700: #885c12;
   --color-warning-900: #483109;
 
-  --color-error-100: #DCAEB2;
-  --color-error-300: #BC676E;
-  --color-error-500: #9D1F2A;
-  --color-error-700: #6B151D;
-  --color-error-900: #390B0F;
+  --color-error-100: #dcaeb2;
+  --color-error-300: #bc676e;
+  --color-error-500: #9d1f2a;
+  --color-error-700: #6b151d;
+  --color-error-900: #390b0f;
+}
+
+@layer base {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  span,
+  a,
+  img,
+  button,
+  input {
+    @apply text-blacks-500;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Nastaligh", Arial, Helvetica, sans-serif;
+    @apply leading-16;
+  }
+
+  p,
+  span,
+  a,
+  button,
+  input,
+  textarea {
+    font-family: "Lotus", Arial, Helvetica, sans-serif;
+    @apply leading-8 text-2xl;
+  }
+
+  h1 {
+    @apply hidden;
+  }
+
+  h2 {
+    @apply text-7xl;
+  }
+
+  h3 {
+    @apply text-2xl;
+  }
+}
+
+.header-part {
+  @apply w-1/2 h-[70vh] flex justify-center items-center;
+}
+
+.hero-content {
+  @apply w-full max-w-2xl px-2;
+}
+
+@keyframes nudge-y {
+  0%, 20%, 100% {
+    transform: translateY(0);
+  }
+  10% {
+    transform: translateY(5px);
+  }
+}
+
+.down-arrow {
+  animation: nudge-y 2s ease-in-out infinite;
+}
+
+.down-arrow:nth-child(2) {
+  animation-delay: 100ms;
 }

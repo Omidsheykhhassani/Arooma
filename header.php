@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="rtl" class="scroll-smooth">
 
 <head>
   <meta charset="UTF-8">
@@ -7,4 +7,4 @@
   <?php wp_head(); ?>
 </head>
 
-<body>
+<body class="bg-whites-500">
