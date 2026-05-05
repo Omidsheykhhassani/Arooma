@@ -1,0 +1,31 @@
+{
+  "name": "fitolife",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npx tailwindcss -i ./style.css -o ./assets/css/dist/output.css --minify",
+    "watch": "npx @tailwindcss/cli -i ./style.css -o ./assets/css/dist/output.css --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Omidsheykhhassani/Fitolife.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Omidsheykhhassani/Fitolife/issues"
+  },
+  "homepage": "https://github.com/Omidsheykhhassani/Fitolife#readme",
+  "devDependencies": {
+    "autoprefixer": "^10.5.0",
+    "postcss": "^8.5.10",
+    "tailwindcss": "^4.2.4"
+  },
+  "dependencies": {
+    "@tailwindcss/cli": "^4.2.4"
+  }
+}

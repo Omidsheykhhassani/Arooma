@@ -1,0 +1,60 @@
+# WordPress Core
+/wp-admin/
+/wp-includes/
+/wp-content/upgrade/
+/wp-content/backup-db/
+/wp-content/backups/
+/wp-content/cache/
+/wp-content/uploads/
+/wp-content/wflogs/
+
+# WordPress Plugins (development)
+/wp-content/plugins/*/
+
+# WordPress Themes (development)
+/wp-content/themes/*/
+
+# WordPress configuration
+wp-config.php
+wp-config-sample.php
+.htaccess
+/.user.ini
+
+# Composer vendor directory
+/vendor/
+
+# Node modules
+/node_modules/
+
+# Build tools and generated files
+/build/
+/dist/
+/assets/css/
+/assets/js/
+/assets/images/
+
+# Development files
+*.log
+*.bak
+*.tmp
+*.swp
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# IDE specific files
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# Backup files (if any)
+*.sql
+*.zip
+*.tar.gz
+*.rar
+
+# WP-CLI cache
+.wp-cli.yml
+
