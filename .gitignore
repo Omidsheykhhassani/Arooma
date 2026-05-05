@@ -26,13 +26,6 @@ wp-config-sample.php
 # Node modules
 /node_modules/
 
-# Build tools and generated files
-/build/
-/dist/
-/assets/css/
-/assets/js/
-/assets/images/
-
 # Development files
 *.log
 *.bak
