@@ -76,9 +76,9 @@ function featured_product_card(string $link, string $image_src, string $image_al
 {
   if (empty($link) || empty($image_src)) return;
 ?>
-  <a href="<?php echo esc_url($link); ?>" class="rounded-lg overflow-hidden group flex flex-col flex-1 max-w-125">
+  <a href="<?php echo esc_url($link); ?>" class="rounded-lg overflow-hidden group flex flex-col flex-1 max-w-125 h-125 bg-primary-100">
     <div class="overflow-hidden">
-      <img src="<?php echo esc_url($image_src); ?>" alt="<?php echo esc_attr($image_alt); ?>" class="w-full h-auto">
+      <img src="<?php echo esc_url($image_src); ?>" alt="<?php echo esc_attr($image_alt); ?>" class="w-full h-auto group-hover:scale-125 transition-transform duration-300">
     </div>
     <div class="py-4 px-2 flex flex-col justify-between flex-1">
       <div>

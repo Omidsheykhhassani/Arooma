@@ -35,34 +35,56 @@
       ?>
     </div>
   </section>
-  <section class="section-container">
-    <div class="section rounded-lg bg-whites-700 flex gap-4">
+  <section class="section-container flex flex-col gap-8">
+    <h2>تازه ترین ها</h2>
+    <div class="section rounded-lg bg-whites-700 flex md:flex-row flex-col gap-4 justify-center items-center py-4 px-2">
       <?php
       if (function_exists('wc_get_products')) {
         $products = wc_get_products(array(
-          'limit'    => 4,
-          'status'   => 'publish',
-          'featured' => true,
+          'limit'   => 3,
+          'status'  => 'publish',
+          'orderby' => 'date',
+          'order'   => 'DESC',
         ));
+      }
 
-      if (!empty($products)) :
-        echo '<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">';
+      if (!empty($products)) {
 
-        foreach ($products as $product) :
+        foreach ($products as $product) {
+          $product_description = $product->get_short_description();
+          if (empty($product_description)) {
+            $product_description = $product->get_description();
+          }
+
+          $product_image = wp_get_attachment_image_url($product->get_image_id(), 'medium_large');
+          if (empty($product_image)) {
+            $product_image = get_template_directory_uri() . "/assets/images/Image placeholder.png";
+          }
+
+          $image_id  = $product->get_image_id();
+          $image_alt = get_post_meta($image_id, '_wp_attachment_image_alt', true);
+          if(empty($image_alt)) {
+            $image_alt = $product->get_title();
+          }
+
           featured_product_card(
             link: $product->get_permalink(),
-            image_src: wp_get_attachment_image_url($product->get_image_id(), 'medium_large'),
-            image_alt: $product->get_title(),
+            image_src: $product_image,
+            image_alt: $image_alt,
             title: $product->get_name(),
-            excerpt: wp_trim_words($product->get_short_description(), 15),
+            excerpt: wp_trim_words($product_description, 15),
             price: (float) $product->get_price()
           );
-        endforeach;
-
-        echo '</div>';
-      endif;
+        }
+      } else {
+        echo "<p>متاسفانه هیچ محصولی پیدا نشد</p>";
+      }
       ?>
     </div>
+    <?php
+    link_button("#", "مشاهده بیشتر")
+
+    ?>
   </section>
 </main>
 <?php get_footer(); ?>
