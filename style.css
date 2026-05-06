@@ -108,7 +108,7 @@
   }
 
   h3 {
-    @apply text-2xl;
+    @apply text-5xl;
   }
 }
 
@@ -135,4 +135,12 @@
 
 .down-arrow:nth-child(2) {
   animation-delay: 100ms;
+}
+
+.section-container {
+  @apply py-32 px-2 flex justify-center items-center;
+}
+
+.section {
+  @apply w-full max-w-7xl
 }
